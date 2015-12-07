@@ -1,15 +1,19 @@
 package com.fang.templet.activity.home;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.fang.templet.R;
+import com.fang.templet.base.BaseActivity;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_home;
     }
 }

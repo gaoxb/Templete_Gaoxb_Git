@@ -10,17 +10,50 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
-    buildTypes {
+
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            storeFile file('E:/Study/Templete_Gaoxb_Git/Templet/keystore/gaoxb.jks')
+            storePassword 'binbin4495'
+            keyAlias 'gaoxb'
+            keyPassword 'binbin4495'
         }
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            zipAlignEnabled true
+        }
+    }
+
+//    productFlavors {
+//        demo {
+//            applicationId "com.fang.templet.demo"
+//            versionName "1.0-demo"
+//        }
+//        full {
+//            applicationId "com.fang.templet.full"
+//            versionName "1.0-full"
+//        }
+//    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/android-logging-log4j-1.0.3.jar')
+    compile 'com.android.support:support-v4:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
 }
