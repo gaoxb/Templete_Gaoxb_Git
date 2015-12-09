@@ -4,6 +4,7 @@ import android.support.multidex.MultiDexApplication;
 
 import com.fang.templet.base.constant.Constant;
 import com.fang.templet.common.log.LogManager;
+import com.fang.templet.common.toast.ToastManager;
 import com.fang.templet.database.DataBaseManager;
 import com.fang.templet.util.StringUtils;
 
@@ -18,13 +19,20 @@ public class MyApplication extends MultiDexApplication {
     //程序上下文/全局场景
     private static MyApplication mApp;
 
+    //activity栈管理
+    private ActivityTack mActivityTack;
+
     @Override
     public void onCreate() {
         super.onCreate();
         mApp = (MyApplication) getApplicationContext();
+    }
+
+    private void init() {
         //初始化日志管理
         LogManager.init();
         LogManager.d(TAG, "MyApplication onCreate()");
+        mActivityTack = ActivityTack.getInstanse();
     }
 
     /**
@@ -49,6 +57,8 @@ public class MyApplication extends MultiDexApplication {
         if (!StringUtils.isNullOrEmpty(manager)) {
             if (manager.equals(Constant.ManagerName.DATABASEMANAMER))
                 return DataBaseManager.getInstance();
+            if (manager.equals(Constant.ManagerName.TOASTMANAGER))
+                return ToastManager.getInstance();
         }
         return null;
     }

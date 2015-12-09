@@ -43,5 +43,7 @@ public final class Constant {
     public static final class ManagerName {
         // 数据库管理者
         public static final String DATABASEMANAMER = "DataBaseManager";
+        // 吐司管理者
+        public static final String TOASTMANAGER = "ToastManager";
     }
 }
