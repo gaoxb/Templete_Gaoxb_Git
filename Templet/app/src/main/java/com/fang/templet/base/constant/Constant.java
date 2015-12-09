@@ -36,4 +36,12 @@ public final class Constant {
         // 打电话权限
         public static final String PERMISSION_PHONE = "android.permission.CALL_PHONE";
     }
+
+    /**
+     * 相关的服务名称
+     */
+    public static final class ManagerName {
+        // 数据库管理者
+        public static final String DATABASEMANAMER = "DataBaseManager";
+    }
 }
