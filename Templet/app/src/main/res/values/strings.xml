@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Templet</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="share">分享</string>
 </resources>

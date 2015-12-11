@@ -15,14 +15,14 @@ import java.lang.reflect.ParameterizedType;
  * 作者：高学斌 on 2015-12-8 0008 16:12   年份：2015
  * 邮箱：13671322615@163.com
  */
-public abstract class MyGenericDao<T extends Serializable> {
+public abstract class MyDBGenericDao<T extends Serializable> {
 
     private Context mContext;
     private BaseDB mBaseDB;
     private Class mClass;
     private String mTableName;
 
-    public MyGenericDao() {
+    public MyDBGenericDao() {
         mContext = MyApplication.getSelf();
         mBaseDB = ((DataBaseManager) MyApplication.
                 getManager(Constant.ManagerName.DATABASEMANAMER)).getDB();

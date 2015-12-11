@@ -26,6 +26,19 @@
 #保护注解
 -keepattributes Annotation
 #保持哪些类不被混淆
+
+#友盟混淆配置
+-keepclassmembers class * {
+  public <init>(org.json.JSONObject);
+}
+-keep public class com.fang.templet.R$*{
+  public static final int *;
+}
+-keepclassmembers enum * {
+  public static **[] values();
+  public static ** valueOf(java.lang.String);
+}
+
 -keep public class * extends android.app.Fragment
 -keep public class * extends android.app.Activity
 -keep public class * extends android.app.Application

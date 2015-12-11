@@ -7,6 +7,7 @@ package com.fang.templet.base.constant;
  * 常量类
  */
 public final class Constant {
+
     private static final String TAG = "Constant";
 
     /**
@@ -45,5 +46,29 @@ public final class Constant {
         public static final String DATABASEMANAMER = "DataBaseManager";
         // 吐司管理者
         public static final String TOASTMANAGER = "ToastManager";
+        // SP管理者
+        public static final String SHAREPREFERENCEMANAMAGER = "SharePreferenceManager";
+        // Dialog管理者
+        public static final String DIALOGMANAGER = "DialogManager";
+        // 下载管理者管理者
+        public static final String DOWNLOADMANAGER = "DownLoadManager";
+        // 分享和第三方登录管理者
+        public static final String SHAREMANAGER = "ShareManager";
+    }
+
+    /**
+     * 相关的服务名称
+     */
+    public static final class Download {
+        public static final int MSG_PERCENT = 0;
+        public static final int MSG_REQUEST_OK = 0;
+    }
+
+    /**
+     * ModShareSdk 配置信息
+     */
+    public static final class ShareSDK {
+        public static final String APP_KEY = "d3f5d5674304";
+        public static final String APP_SCRET = "29a3c86fd1a7794d664a52af5418e622";
     }
 }

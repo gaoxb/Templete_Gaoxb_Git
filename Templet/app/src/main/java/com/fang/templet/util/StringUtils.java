@@ -1,7 +1,9 @@
 package com.fang.templet.util;
 
+import android.content.Context;
 import android.nfc.Tag;
 
+import com.fang.templet.base.MyApplication;
 import com.fang.templet.common.log.LogManager;
 
 import java.io.BufferedReader;
@@ -202,5 +204,15 @@ public class StringUtils {
             }
         }
         return false;
+    }
+
+    /**
+     * 根据id获取字符串
+     *
+     * @param app_name
+     * @return
+     */
+    public static String getString(Context context, int app_name) {
+        return context.getResources().getString(app_name);
     }
 }

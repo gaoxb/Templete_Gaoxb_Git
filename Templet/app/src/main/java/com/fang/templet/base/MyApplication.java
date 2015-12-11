@@ -3,9 +3,13 @@ package com.fang.templet.base;
 import android.support.multidex.MultiDexApplication;
 
 import com.fang.templet.base.constant.Constant;
+import com.fang.templet.common.dialog.DialogManager;
+import com.fang.templet.common.download.DownLoadManager;
 import com.fang.templet.common.log.LogManager;
 import com.fang.templet.common.toast.ToastManager;
 import com.fang.templet.database.DataBaseManager;
+import com.fang.templet.share.ShareManager;
+import com.fang.templet.sharepreference.SharePreferenceManager;
 import com.fang.templet.util.StringUtils;
 
 /**
@@ -33,6 +37,8 @@ public class MyApplication extends MultiDexApplication {
         LogManager.init();
         LogManager.d(TAG, "MyApplication onCreate()");
         mActivityTack = ActivityTack.getInstanse();
+        //初始化share管理者
+        ShareManager.getInstance().init();
     }
 
     /**
@@ -59,6 +65,14 @@ public class MyApplication extends MultiDexApplication {
                 return DataBaseManager.getInstance();
             if (manager.equals(Constant.ManagerName.TOASTMANAGER))
                 return ToastManager.getInstance();
+            if (manager.equals(Constant.ManagerName.SHAREPREFERENCEMANAMAGER))
+                return SharePreferenceManager.getInstance();
+            if (manager.equals(Constant.ManagerName.DIALOGMANAGER))
+                return DialogManager.getInstance();
+            if (manager.equals(Constant.ManagerName.DOWNLOADMANAGER))
+                return DownLoadManager.getInstance();
+            if (manager.equals(Constant.ManagerName.SHAREMANAGER))
+                return ShareManager.getInstance();
         }
         return null;
     }

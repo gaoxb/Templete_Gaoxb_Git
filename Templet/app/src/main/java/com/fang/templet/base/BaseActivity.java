@@ -8,7 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
 
 import com.fang.templet.R;
+import com.fang.templet.util.StringUtils;
 import com.fang.templet.util.UIUtils;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * 包名：com.fang.templet.base
@@ -18,6 +20,7 @@ import com.fang.templet.util.UIUtils;
  */
 public abstract class BaseActivity extends ActionBarActivity {
     private Toolbar toolbar;
+    private String mPageName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,4 +65,30 @@ public abstract class BaseActivity extends ActionBarActivity {
     protected void setActionBarIcon(int iconRes) {
         toolbar.setNavigationIcon(iconRes);
     }
+
+    public void setmPageName(String mPageName) {
+        if (!StringUtils.isNullOrEmpty(mPageName)) {
+            this.mPageName = mPageName;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!StringUtils.isNullOrEmpty(mPageName)) {
+            MobclickAgent.onPageStart(mPageName);
+        }
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (!StringUtils.isNullOrEmpty(mPageName)) {
+            MobclickAgent.onPageEnd(mPageName);
+        }
+        MobclickAgent.onPause(this);
+    }
+
+
 }
