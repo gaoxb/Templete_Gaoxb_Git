@@ -1,4 +1,4 @@
-package com.fang.templet.net;
+package com.fang.templet.common.net;
 //TODO
 /**
  * <p>Encodes and decodes to and from Base64 notation.</p>

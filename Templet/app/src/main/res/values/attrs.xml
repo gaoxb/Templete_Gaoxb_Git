@@ -24,4 +24,14 @@
     <declare-styleable name="Themes">
         <attr name="numberProgressBarStyle" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="MyToggleButton">
+        <attr name="myborderWidth" format="dimension"></attr>
+        <attr name="myoffBorderColor" format="reference|color"></attr>
+        <attr name="myoffColor" format="reference|color"></attr>
+        <attr name="myonColor" format="reference|color"></attr>
+        <attr name="myspotColor" format="reference|color"></attr>
+        <attr name="myanimate" format="reference|boolean"></attr>
+    </declare-styleable>
+
 </resources>

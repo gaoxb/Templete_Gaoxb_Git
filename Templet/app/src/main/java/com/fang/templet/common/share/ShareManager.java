@@ -1,4 +1,4 @@
-package com.fang.templet.share;
+package com.fang.templet.common.share;
 
 import android.content.Context;
 

@@ -7,6 +7,8 @@ import com.fang.templet.base.BaseActivity;
 
 public class HomeActivity extends BaseActivity {
 
+    private static final String TAG = "HomeActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

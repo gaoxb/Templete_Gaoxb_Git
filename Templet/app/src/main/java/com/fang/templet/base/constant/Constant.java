@@ -54,6 +54,8 @@ public final class Constant {
         public static final String DOWNLOADMANAGER = "DownLoadManager";
         // 分享和第三方登录管理者
         public static final String SHAREMANAGER = "ShareManager";
+        // 图片缓存管理者
+        public static final String IMAGELOADERMANAGER = "ImageLoaderManager";
     }
 
     /**

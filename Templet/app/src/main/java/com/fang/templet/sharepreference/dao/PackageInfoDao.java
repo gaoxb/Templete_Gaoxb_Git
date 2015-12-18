@@ -11,6 +11,6 @@ public class PackageInfoDao extends MySPGenericDao<PackageInfo> {
 
 
     public PackageInfoDao() {
-        super(mSPManager);
+        super();
     }
 }

@@ -25,7 +25,6 @@ public abstract class BaseActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutResource());
         init();
     }
 
@@ -33,8 +32,9 @@ public abstract class BaseActivity extends ActionBarActivity {
      * 初始化基础界面
      */
     private void init() {
-        setToolbar();
         setStatusBar();
+        setContentView(getLayoutResource());
+//        setToolbar();
     }
 
     /**
@@ -42,10 +42,6 @@ public abstract class BaseActivity extends ActionBarActivity {
      */
     private void setToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
     }
 
     private void setStatusBar() {

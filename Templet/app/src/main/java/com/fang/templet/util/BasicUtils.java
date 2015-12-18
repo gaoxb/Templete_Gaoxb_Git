@@ -243,7 +243,7 @@ public class BasicUtils {
     }
 
     public static boolean judgeNotNull(List list) {
-        return judgeNotNull(list, null);
+        return judgeNotNull(list);
     }
 
     public static boolean judgeNotNull(List list, List... lists) {

@@ -8,6 +8,8 @@ import com.fang.templet.base.BaseActivity;
 
 public class SplashActivity extends BaseActivity {
 
+    private static final String TAG = "SplashActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
