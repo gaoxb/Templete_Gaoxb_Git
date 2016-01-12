@@ -3,14 +3,14 @@ package com.fang.templet.base;
 import android.support.multidex.MultiDexApplication;
 
 import com.fang.templet.base.constant.Constant;
-import com.fang.templet.common.dialog.DialogManager;
-import com.fang.templet.common.download.DownLoadManager;
-import com.fang.templet.common.imagecahe.ImageLoaderManager;
-import com.fang.templet.common.log.LogManager;
-import com.fang.templet.common.net.NetChangeManager;
-import com.fang.templet.common.toast.ToastManager;
+import com.fang.templet.component.dialog.DialogManager;
+import com.fang.templet.component.download.DownLoadManager;
+import com.fang.templet.component.imagecahe.ImageLoaderManager;
+import com.fang.templet.component.log.LogManager;
+import com.fang.templet.net.NetChangeManager;
+import com.fang.templet.component.toast.ToastManager;
 import com.fang.templet.database.DataBaseManager;
-import com.fang.templet.common.share.ShareManager;
+import com.fang.templet.component.share.ShareManager;
 import com.fang.templet.sharepreference.SharePreferenceManager;
 import com.fang.templet.util.StringUtils;
 
@@ -32,17 +32,15 @@ public class MyApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         mApp = (MyApplication) getApplicationContext();
+        init();
     }
 
     private void init() {
-        //初始化日志管理
-        LogManager.init();
+        LogManager.init();   //初始化日志管理
         LogManager.d(TAG, "MyApplication onCreate()");
         mActivityTack = ActivityTack.getInstanse();
-        //初始化share管理者
-        ShareManager.getInstance().init();
-        //初始化图片缓存管理者
-        ImageLoaderManager.getInstance().init();
+        ShareManager.getInstance().init();         //初始化share管理者
+        ImageLoaderManager.getInstance().init();   //初始化图片缓存管理者
     }
 
     /**
@@ -84,6 +82,5 @@ public class MyApplication extends MultiDexApplication {
         }
         return null;
     }
-
 
 }

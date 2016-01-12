@@ -1,10 +1,8 @@
 package com.fang.templet.util;
 
 import android.content.Context;
-import android.nfc.Tag;
 
-import com.fang.templet.base.MyApplication;
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -59,7 +59,7 @@
             android:value="e577d0582ff5ea270ccc5269ba9e2485" />
 
         <!-- 主页面 -->
-        <activity android:name=".activity.home.HomeActivity">
+        <activity android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,43 +67,6 @@
             </intent-filter>
         </activity>
 
-        <!-- 广告页面 -->
-        <activity
-            android:name=".activity.splash.SplashActivity"
-            android:label="@string/title_activity_splash" />
-
-        <!-- 关于页面 -->
-        <activity
-            android:name=".activity.common.AboutActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- 引导页面 -->
-        <activity
-            android:name=".activity.common.GuideActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- 登录页面 -->
-        <activity
-            android:name=".activity.common.LoginActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- 瀑布流相册页面 -->
-        <activity
-            android:name=".activity.common.PhotoActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- 小视频录制页面页面 -->
-        <activity
-            android:name=".activity.common.RecordVideoActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- 查找页面 -->
-        <activity
-            android:name=".activity.common.SearchActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- 设置页面 -->
-        <activity
-            android:name=".activity.common.SettingsActivity"
-            android:label="@string/title_activity_splash" />
-        <!-- WEBY页面 -->
-        <activity
-            android:name=".activity.common.WebActivity"
-            android:label="@string/title_activity_splash" />
 
         <!-- mod activity配置 -->
         <activity
@@ -136,30 +99,124 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
+        <!-- 第一次启动引导页面 -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 广告页面 -->
+        <activity
+            android:name=".activity.AdvertiseActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 关于页面 -->
+        <activity
+            android:name=".activity.currency.AboutActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 高德地图页面 -->
+        <activity
+            android:name=".activity.currency.AMapActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 高德地图页面 -->
+        <activity
+            android:name=".activity.currency.BaiduMapActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 城市页面 -->
+        <activity
+            android:name=".activity.currency.CityActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 登录页面 -->
+        <activity
+            android:name=".activity.currency.LoginActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 瀑布流相册页面 -->
+        <activity
+            android:name=".activity.currency.PhotoActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 小视频录制页面页面 -->
+        <activity
+            android:name=".activity.currency.RecordVideoActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 二维码扫描页面 -->
+        <activity
+            android:name=".activity.currency.ScanActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 查找页面 -->
+        <activity
+            android:name=".activity.currency.SearchActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 设置页面 -->
+        <activity
+            android:name=".activity.currency.SettingsActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- 拍照页面 -->
+        <activity
+            android:name=".activity.currency.TakePhotoActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!--用户反馈页面 -->
+        <activity
+            android:name=".activity.currency.UserFeedback"
+            android:label="@string/title_activity_splash" />
+
+        <!--视频播放页面 -->
+        <activity
+            android:name=".activity.currency.VideoActivity"
+            android:label="@string/title_activity_splash" />
+
+        <!-- WEBY页面 -->
+        <activity
+            android:name=".activity.currency.WebActivity"
+            android:label="@string/title_activity_splash" />
+
         <!-- 高德定位需要的服务 -->
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 广播接受者配置选项 -->
-        <receiver android:name=".broadcast.BootCompletedReceiver">
+        <receiver android:name=".broadcastreceiver.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".broadcast.ShutdownReceiver">
+        <receiver android:name=".broadcastreceiver.ShutdownReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
             </intent-filter>
         </receiver>
 
-        !-- 监听网络变化广播 -->
+        <!-- 监听网络变化广播 -->
         <receiver
-            android:name=".broadcast.NetChangeReceiver"
+            android:name=".broadcastreceiver.NetChangeReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
             </intent-filter>
         </receiver>
+
+        <!-- 屏幕解锁屏幕变化 -->
+        <receiver
+            android:name=".broadcastreceiver.ScreenBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

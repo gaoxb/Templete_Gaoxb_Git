@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.fang.templet.base.MyApplication;
-import com.fang.templet.common.net.NetChangeManager;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;

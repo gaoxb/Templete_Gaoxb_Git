@@ -1,6 +1,6 @@
 package com.fang.templet.util;
 
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

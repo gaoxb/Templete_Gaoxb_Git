@@ -3,7 +3,7 @@ package com.fang.templet.util;
 import android.content.Context;
 import android.os.Environment;
 
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

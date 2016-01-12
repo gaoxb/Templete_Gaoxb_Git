@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.fang.templet.base.MyApplication;
 import com.fang.templet.base.constant.Constant;
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.io.File;
 

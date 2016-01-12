@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.io.File;
 import java.util.List;

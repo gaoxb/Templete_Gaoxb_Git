@@ -2,7 +2,7 @@ package com.fang.templet.util;
 
 import android.text.TextUtils;
 
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.io.*;
 import java.math.BigInteger;

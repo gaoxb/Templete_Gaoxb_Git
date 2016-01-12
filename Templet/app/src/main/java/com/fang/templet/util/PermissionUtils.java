@@ -3,7 +3,7 @@ package com.fang.templet.util;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 /**
  * 包名：com.fang.templet.util

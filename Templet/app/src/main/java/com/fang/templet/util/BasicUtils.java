@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.fang.templet.common.log.LogManager;
+import com.fang.templet.component.log.LogManager;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -58,7 +58,6 @@ public class BasicUtils {
     }
 
     public static int convertStringToInt(String num) {
-        //Logs.d("inmessage-----"+num);
         if (num == null) {
             return 0;
         }
