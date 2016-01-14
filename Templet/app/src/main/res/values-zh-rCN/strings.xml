@@ -144,6 +144,7 @@
 
     <string name="activity_test">测试页面</string>
     <string name="activity_web">Web页面</string>
+    <string name="activity_login">登录</string>
     <string name="activity_about">关于我们</string>
     <string name="activity_city"> 切换城市</string>
 </resources>

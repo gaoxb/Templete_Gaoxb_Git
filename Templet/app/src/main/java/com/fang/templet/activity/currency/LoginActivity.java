@@ -2,6 +2,7 @@ package com.fang.templet.activity.currency;
 
 import android.os.Bundle;
 
+import com.fang.templet.R;
 import com.fang.templet.base.BaseActivity;
 
 /**
@@ -20,12 +21,13 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResource() {
-        return 0;
+        return R.layout.activity_login;
     }
 
     @Override
     protected void initView() {
-
+        setTitle(getResources().getString(R.string.activity_login));
+        setNav(R.drawable.ic_menu_back);
     }
 
     @Override
