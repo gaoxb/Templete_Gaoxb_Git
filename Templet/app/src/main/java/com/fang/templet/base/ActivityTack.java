@@ -27,12 +27,22 @@ public class ActivityTack {
 
     }
 
-    public void addActivity(Activity activity) {
+    public void push(Activity activity) {
         activityList.add(activity);
     }
 
-    public void removeActivity(Activity activity) {
+    public void pull(Activity activity) {
         activityList.remove(activity);
+    }
+
+    /**
+     * 弹出activity
+     *
+     * @param activity
+     */
+    public void popActivity(Activity activity) {
+        pull(activity);
+        activity.finish();
     }
 
     /**
@@ -63,7 +73,6 @@ public class ActivityTack {
         return null;
     }
 
-    @SuppressWarnings("rawtypes")
     public Activity getActivityByClass(Class cs) {
         for (Activity ac : activityList) {
             if (ac.getClass().equals(cs)) {
@@ -74,22 +83,10 @@ public class ActivityTack {
     }
 
     /**
-     * 弹出activity
-     *
-     * @param activity
-     */
-    public void popActivity(Activity activity) {
-        removeActivity(activity);
-        activity.finish();
-    }
-
-
-    /**
      * 弹出activity到
      *
      * @param cs
      */
-    @SuppressWarnings("rawtypes")
     public void popUntilActivity(Class... cs) {
         List<Activity> list = new ArrayList<Activity>();
         for (int i = activityList.size() - 1; i >= 0; i--) {

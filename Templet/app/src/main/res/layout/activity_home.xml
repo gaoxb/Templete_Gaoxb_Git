@@ -6,18 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".activity.HomeActivity">
 
-    <android.support.v7.widget.Toolbar
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimaryDark" />
-
     <ListView
         android:id="@+id/listview"
-        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        ></ListView>
+        android:background="@color/white"></ListView>
 </RelativeLayout>

@@ -31,9 +31,6 @@ public class ToastManager {
     }
 
     private void init(Context c) {
-        // v = Toast.makeText(c, "", Toast.LENGTH_SHORT).getView();
-//        v = LayoutInflater.from(c).inflate(R.layout.toast, null);
-//        tv = (TextView) v.findViewById(R.id.tv_toast);
         toast = new Toast(c);
         toast.setView(v);
     }
@@ -100,7 +97,7 @@ public class ToastManager {
     }
 
     /**
-     * Hide the toast, if any.
+     * 隐藏吐司
      */
     public void hideToast() {
         if (null != toast) {

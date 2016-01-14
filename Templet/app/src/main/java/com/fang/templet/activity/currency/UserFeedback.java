@@ -4,12 +4,32 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.fang.templet.R;
+import com.fang.templet.base.BaseActivity;
 
-public class UserFeedback extends Activity {
+public class UserFeedback extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.userfeedback_activity);
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return 0;
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void onNavClickEvent() {
+
     }
 }

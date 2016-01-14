@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/qq"></ImageView>
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="版本号"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        style="@style/margin_bg"
+        android:layout_below="@+id/version"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_top"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="版本更新"
+                android:textColor="@android:color/black"
+                android:textSize="16.0sp" />
+
+            <ImageView style="@style/right_triangle" />
+        </RelativeLayout>
+
+        <View style="@style/divider" />
+
+        <RelativeLayout
+            android:id="@+id/rl_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_middle"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="问题反馈"
+                android:textColor="@android:color/black"
+                android:textSize="16.0sp" />
+
+            <ImageView style="@style/right_triangle" />
+        </RelativeLayout>
+
+        <View style="@style/divider" />
+
+        <RelativeLayout
+            android:id="@+id/rl_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bottom"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="使用帮助"
+                android:textColor="@android:color/black"
+                android:textSize="16.0sp" />
+
+            <ImageView style="@style/right_triangle" />
+        </RelativeLayout>
+
+        <View style="@style/divider" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:text="联系方式：13671322615@163.com"
+        android:textColor="@android:color/black"
+        android:textSize="14.0sp" />
+
+</RelativeLayout>

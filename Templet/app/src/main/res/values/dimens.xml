@@ -6,5 +6,5 @@
 
     <dimen name="standard_padding">8dip</dimen>
     <dimen name="half_padding">4dip</dimen>
-
+    <dimen name="toobar_height">70dp</dimen>
 </resources>

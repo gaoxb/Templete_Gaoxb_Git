@@ -10,6 +10,11 @@
         <item name="colorAccent">@color/material_a200</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
     <style name="MyActionBar" parent="Widget.AppCompat.ActionBar">
@@ -35,9 +40,69 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
     </style>
+
     <style name="ShareButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="margin_bg" parent="margin">
+        <item name="android:background">@drawable/shape_bg</item>
+    </style>
+
+    <style name="margin" parent="fill_width">
+        <item name="android:layout_marginRight">10dip</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 宽全屏，高自适应 -->
+    <style name="fill_width">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="right_triangle" parent="right_icon">
+        <item name="android:background">@drawable/triangle</item>
+    </style>
+
+    <!-- 右侧图片 -->
+    <style name="right_icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">10dip</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!-- 分割线 -->
+    <style name="divider">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@drawable/divider_line</item>
+    </style>
+
+    <style name="item_middle" parent="item_top">
+        <item name="android:background">@drawable/shape_middle</item>
+    </style>
+
+    <!-- 头部可点击 -->
+    <style name="item_top" parent="item_top_n">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/shape_top</item>
+    </style>
+    <!-- 头部不可点击 -->
+    <style name="item_top_n" parent="fill_width">
+        <item name="android:clickable">false</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">15dip</item>
+        <item name="android:paddingRight">10dip</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingBottom">15dip</item>
+    </style>
+
+    <style name="item_bottom" parent="item_top">
+        <item name="android:background">@drawable/shape_bottom</item>
+    </style>
 </resources>

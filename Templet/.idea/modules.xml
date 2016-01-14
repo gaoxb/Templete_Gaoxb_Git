@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Templet.iml" filepath="$PROJECT_DIR$/Templet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smslibrary/smslibrary.iml" filepath="$PROJECT_DIR$/smslibrary/smslibrary.iml" />
     </modules>
   </component>
 </project>

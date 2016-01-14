@@ -35,4 +35,19 @@ public class SplashActivity extends BaseActivity {
         return R.layout.activity_splash;
     }
 
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void onNavClickEvent() {
+
+    }
+
 }

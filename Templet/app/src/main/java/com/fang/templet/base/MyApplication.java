@@ -1,5 +1,6 @@
 package com.fang.templet.base;
 
+import android.content.Intent;
 import android.support.multidex.MultiDexApplication;
 
 import com.fang.templet.base.constant.Constant;
@@ -13,6 +14,8 @@ import com.fang.templet.database.DataBaseManager;
 import com.fang.templet.component.share.ShareManager;
 import com.fang.templet.sharepreference.SharePreferenceManager;
 import com.fang.templet.util.StringUtils;
+
+import cn.smssdk.SMSSDK;
 
 /**
  * 包名：com.fang.templet.base
@@ -41,6 +44,8 @@ public class MyApplication extends MultiDexApplication {
         mActivityTack = ActivityTack.getInstanse();
         ShareManager.getInstance().init();         //初始化share管理者
         ImageLoaderManager.getInstance().init();   //初始化图片缓存管理者
+
+        SMSSDK.initSDK(this, Constant.SmsSDK.APP_KEY, Constant.SmsSDK.APP_SCRET);
     }
 
     /**
@@ -81,6 +86,27 @@ public class MyApplication extends MultiDexApplication {
                 return NetChangeManager.getInstance();
         }
         return null;
+    }
+
+    /**
+     * 退出
+     */
+    public void exit() {
+        clearInfo();
+        sendBroadcast(new Intent(Constant.Intent.INTENT_ACTION_EXIT_APP));
+    }
+
+    /**
+     * 程序退出清楚一些数据 以及保存一些必要的数据
+     */
+    private void clearInfo() {
+
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        System.gc();
     }
 
 }

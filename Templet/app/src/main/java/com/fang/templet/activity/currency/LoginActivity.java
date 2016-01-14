@@ -22,4 +22,19 @@ public class LoginActivity extends BaseActivity {
     protected int getLayoutResource() {
         return 0;
     }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void onNavClickEvent() {
+
+    }
 }

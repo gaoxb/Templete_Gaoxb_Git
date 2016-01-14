@@ -12,7 +12,7 @@ import android.support.v7.app.AlertDialog;
  */
 public class DialogImpl implements IDialog {
 
-
+    private static final String TAG = "DialogImpl";
 
     @Override
     public Dialog showDialog(Context context, String title, String msg, final DialogCallBack callback) {

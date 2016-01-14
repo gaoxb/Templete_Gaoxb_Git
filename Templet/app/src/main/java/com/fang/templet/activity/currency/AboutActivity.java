@@ -1,8 +1,11 @@
 package com.fang.templet.activity.currency;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
+import com.fang.templet.R;
 import com.fang.templet.base.BaseActivity;
+import com.fang.templet.util.PackageInfoUtils;
 
 /**
  * 包名：com.fang.templet.activity
@@ -14,6 +17,7 @@ public class AboutActivity extends BaseActivity{
 
     private static final String TAG = "AboutActivity";
 
+    private TextView mVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,24 @@ public class AboutActivity extends BaseActivity{
     
     @Override
     protected int getLayoutResource() {
-        return 0;
+        return R.layout.activity_about;
+    }
+
+    @Override
+    protected void initView() {
+        setTitle(getResources().getString(R.string.activity_about));
+        setNav(R.drawable.ic_menu_back);
+        mVersion = (TextView)findViewById(R.id.version);
+        mVersion.setText(PackageInfoUtils.getAppVersionName(mContext));
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void onNavClickEvent() {
+        finish();
     }
 }
