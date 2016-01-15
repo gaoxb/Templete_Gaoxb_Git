@@ -39,12 +39,14 @@
     <color name="list_item_normal">#ffffffff</color>
     <color name="shape_bg">#ffcccccc</color>
     <color name="dividerline">#E0E0E0</color>
+    <color name="dividerline_black">#828282</color>
     <color name="list_item_selected">#ffe6e6e6</color>
     <color name="background">#FF000000</color>
     <color name="black">#FF000000</color>
     <color name="yellow">#FFFFE400</color>
     <color name="pink_red">#F63E2A</color>
     <color name="red">#FF0000</color>
+    <color name="btn_color">#4DB2FF</color>
     <color name="bulegray">#f0f0f0</color>
     <color name="gray">#828282</color>
     <color name="graylight">#cccccc</color>
@@ -62,4 +64,6 @@
     <color name="message_checked">#90918f</color>
     <color name="message_no_check">#323232</color>
     <color name="stick_color_bg">#e2e2e2</color>
+    <color name="text_color">#54B4FB</color>
+    <color name="share_text_color">#ADADAD</color>
 </resources>

@@ -4,4 +4,10 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <include layout="@layout/activity_login_account"></include>
+
+    <include layout="@layout/activity_login_register"></include>
+
+    <include layout="@layout/activity_login_phone"></include>
+
 </RelativeLayout>

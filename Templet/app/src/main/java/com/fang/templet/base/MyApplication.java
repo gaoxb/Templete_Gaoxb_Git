@@ -8,6 +8,7 @@ import com.fang.templet.component.dialog.DialogManager;
 import com.fang.templet.component.download.DownLoadManager;
 import com.fang.templet.component.imagecahe.ImageLoaderManager;
 import com.fang.templet.component.log.LogManager;
+import com.fang.templet.component.sms.SmsManager;
 import com.fang.templet.net.NetChangeManager;
 import com.fang.templet.component.toast.ToastManager;
 import com.fang.templet.database.DataBaseManager;
@@ -84,6 +85,8 @@ public class MyApplication extends MultiDexApplication {
                 return ImageLoaderManager.getInstance();
             if (manager.equals(Constant.ManagerName.NETCHANGEMANAGER))
                 return NetChangeManager.getInstance();
+            if (manager.equals(Constant.ManagerName.SMSMANAGER))
+                return SmsManager.getInstance();
         }
         return null;
     }

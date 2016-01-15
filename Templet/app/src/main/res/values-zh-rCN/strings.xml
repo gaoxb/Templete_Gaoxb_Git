@@ -147,4 +147,7 @@
     <string name="activity_login">登录</string>
     <string name="activity_about">关于我们</string>
     <string name="activity_city"> 切换城市</string>
+    <string name="login">登录</string>
+    <string name="share_text">通过以下方式直接登录</string>
+    <string name="txt_getMsgCode_validate">获取验证码</string>
 </resources>

@@ -18,7 +18,7 @@ public class UIUtils {
             SystemBarTintManager tintManager = new SystemBarTintManager(activity);
             tintManager.setStatusBarTintEnabled(true);
             tintManager.setNavigationBarTintEnabled(true);
-            tintManager.setStatusBarTintDrawable(new ColorDrawable(activity.getResources().getColor(R.color.material_700)));
+            tintManager.setStatusBarTintDrawable(new ColorDrawable(activity.getResources().getColor(R.color.white)));
         }
     }
 }

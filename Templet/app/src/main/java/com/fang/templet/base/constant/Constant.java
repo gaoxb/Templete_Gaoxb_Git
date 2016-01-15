@@ -65,6 +65,8 @@ public final class Constant {
         public static final String IMAGELOADERMANAGER = "ImageLoaderManager";
         //  网络类型管理者
         public static final String NETCHANGEMANAGER = "NetChangeManager";
+        //  网络类型管理者
+        public static final String SMSMANAGER = "SMSManager";
     }
 
     /**

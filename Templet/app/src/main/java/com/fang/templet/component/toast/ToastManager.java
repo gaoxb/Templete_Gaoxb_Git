@@ -1,10 +1,12 @@
 package com.fang.templet.component.toast;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fang.templet.R;
 import com.fang.templet.base.MyApplication;
 
 /**
@@ -32,67 +34,64 @@ public class ToastManager {
 
     private void init(Context c) {
         toast = new Toast(c);
+        v = LayoutInflater.from(c).inflate(R.layout.toast, null);
+        tv = (TextView) v.findViewById(R.id.tv_toast);
         toast.setView(v);
     }
 
     /**
      * 短时间显示Toast
      *
-     * @param context
      * @param message
      */
-    public void showShort(Context context, CharSequence message) {
+    public void showShort(CharSequence message) {
         toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setText(message);
+        tv.setText(message);
         toast.show();
     }
 
     /**
      * 短时间显示Toast
      *
-     * @param context
      * @param message
      */
-    public void showShort(Context context, int message) {
+    public void showShort(int message) {
         toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setText(message);
+        tv.setText(message);
         toast.show();
     }
 
     /**
      * 长时间显示Toast
      *
-     * @param context
      * @param message
      */
-    public void showLong(Context context, CharSequence message) {
+    public void showLong(CharSequence message) {
         toast.setDuration(Toast.LENGTH_LONG);
-        toast.setText(message);
+        tv.setText(message);
         toast.show();
     }
 
     /**
      * 长时间显示Toast
      *
-     * @param context
      * @param message
      */
-    public void showLong(Context context, int message) {
+    public void showLong(int message) {
         toast.setDuration(Toast.LENGTH_LONG);
-        toast.setText(message);
+        tv.setText(message);
         toast.show();
     }
 
     /**
      * 自定义显示Toast时间
      *
-     * @param context
      * @param message
      * @param duration
      */
-    public void show(Context context, CharSequence message, int duration) {
+    public void show(CharSequence message, int duration) {
         toast.setDuration(duration);
-        toast.setText(message);
+        tv.setText(message);
         toast.show();
     }
 

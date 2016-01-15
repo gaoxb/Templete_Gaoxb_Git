@@ -10,7 +10,7 @@
         android:id="@+id/id_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/material_700"
+        android:background="@color/white"
         app:title=" "></android.support.v7.widget.Toolbar>
 
     <ImageView
@@ -34,7 +34,7 @@
         android:maxLength="7"
         android:singleLine="true"
         android:text="@string/app_picker_name"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:visibility="gone"></TextView>
 </RelativeLayout>

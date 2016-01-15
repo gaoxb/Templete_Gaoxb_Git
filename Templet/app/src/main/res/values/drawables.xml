@@ -2,5 +2,5 @@
 <resources>
     <drawable name="divider_line">@color/dividerline</drawable>
     <drawable name="transparent">#00000000</drawable>
-
+    <drawable name="divider_line_black">@color/dividerline_black</drawable>
 </resources>

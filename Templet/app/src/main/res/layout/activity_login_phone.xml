@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/phone_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/phone_number"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/activities_inputview_frame_bg">
+
+        <ImageView
+            android:id="@+id/topdivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/share_text_color"></ImageView>
+
+        <EditText
+            android:id="@+id/phone_input"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/topdivider"
+            android:layout_margin="5dip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/phonenum_hint"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:paddingLeft="5dip"
+            android:paddingRight="25dip"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15dip" />
+
+        <ImageButton
+            android:id="@+id/del_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/popup_close"
+            android:contentDescription="Search..."
+            android:scaleType="fitCenter"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/verify_number"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/phone_number"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/activities_inputview_frame_bg">
+
+        <ImageView
+            android:id="@+id/topdivider_1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/share_text_color"></ImageView>
+
+        <EditText
+            android:id="@+id/input_verify_number"
+            android:layout_width="250dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/topdivider_1"
+            android:layout_margin="5dip"
+            android:hint="@string/verifynum_hint"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:paddingLeft="5dip"
+            android:paddingRight="25dip"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15dip" />
+
+        <ImageView
+            android:id="@+id/topdivider_2"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/input_verify_number"
+            android:background="@color/share_text_color"></ImageView>
+
+        <Button
+            android:id="@+id/btn_verifynum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/topdivider_2"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/verifynum_btn"
+            android:text="@string/verifynum_btn"
+            android:enabled="false"
+            android:textColor="@color/graylight"></Button>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/topdivider_3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/verify_number"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/share_text_color"></ImageView>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/topdivider_3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/btn_color"
+        android:text="@string/login"></Button>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_button"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="@string/login_text1"
+            android:textColor="@color/text_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/login_text2"
+            android:textColor="@color/text_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/share_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/share_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/share_text"
+                android:textColor="@color/share_text_color" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/share_text"
+                android:background="@color/share_text_color"></ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/share_text"
+                android:background="@color/share_text_color"></ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/share_title"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/qq_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/weibo_login"
+                android:background="@drawable/tencent_login_bg"
+                android:text="Button1" />
+
+            <ImageButton
+                android:id="@+id/weibo_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/weibo_login_bg"
+                android:text="Button2" />
+
+            <ImageButton
+                android:id="@+id/weixin_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@id/weibo_login"
+                android:background="@drawable/weixin_login_bg"
+                android:text="Button2" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
