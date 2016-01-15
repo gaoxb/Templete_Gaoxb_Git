@@ -2,6 +2,7 @@ package com.fang.templet.activity.currency;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -186,8 +187,18 @@ public class LoginActivity extends BaseActivity implements LoginInterface, TextW
     }
 
     public void startTimer() {
-        MyCountTimer timeCount = new MyCountTimer(mHandler);///传入了文字颜色值
-        timeCount.start();
+        new CountDownTimer(10000, 1000) {//总时间， 间隔时间
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Btn_Validation.setText("即将开始(" + millisUntilFinished / 1000 + "/s)");
+            }
+
+            @Override
+            public void onFinish() {
+                Btn_Validation.setText("测试");
+            }
+        }.start();
         isCountTimer = true;
     }
 }
