@@ -135,4 +135,13 @@
     <string name="phonenum_hint">手机号码</string>
     <string name="verifynum_hint">验证码</string>
     <string name="verifynum_btn">获取验证码</string>
+    <string name="guide_text06">微信6</string>
+    <string name="guide_btn_text">开始使用</string>
+    <string name="guide_text05">微信5</string>
+    <string name="guide_text04">微信4</string>
+    <string name="guide_text03">微信3</string>
+    <string name="guide_text02">微信2</string>
+    <string name="guide_text01">微信1</string>
+    <string name="normal">标准</string>
+    <string name="satellite">卫星</string>
 </resources>

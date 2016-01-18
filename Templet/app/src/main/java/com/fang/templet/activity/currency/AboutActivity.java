@@ -29,6 +29,7 @@ public class AboutActivity extends BaseActivity{
         return R.layout.activity_about;
     }
 
+
     @Override
     protected void initView() {
         setTitle(getResources().getString(R.string.activity_about));

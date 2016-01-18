@@ -15,12 +15,13 @@ public class UserFeedback extends BaseActivity {
 
     @Override
     protected int getLayoutResource() {
-        return 0;
+        return R.layout.activity_feedback;
     }
 
     @Override
     protected void initView() {
-
+        setTitle(getResources().getString(R.string.activity_feedback));
+        setNav(R.drawable.ic_menu_back);
     }
 
     @Override
@@ -30,6 +31,6 @@ public class UserFeedback extends BaseActivity {
 
     @Override
     protected void onNavClickEvent() {
-
+        finish();
     }
 }

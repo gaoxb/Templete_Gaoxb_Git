@@ -91,6 +91,7 @@ public class LoginActivity extends BaseActivity implements LoginInterface, TextW
     @Override
     protected void initData() {
         mLoginPresenter = new LoginPresenter(this);
+        startTimer();
     }
 
     @Override

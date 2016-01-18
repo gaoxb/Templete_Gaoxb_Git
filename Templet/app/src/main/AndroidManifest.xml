@@ -32,6 +32,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    //定位包、导航包需要的额外权限（注：基础权限也需要）
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 
     <application
         android:name=".base.MyApplication"
@@ -53,7 +56,6 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="e577d0582ff5ea270ccc5269ba9e2485" />
-
         <!-- 主页面 -->
         <!--<activity android:name=".activity.HomeActivity">-->
             <!--<intent-filter>-->
@@ -187,7 +189,7 @@
             android:label="@string/title_activity_splash" />
 
         <!-- 高德定位需要的服务 -->
-        <service android:name="com.amap.api.location.APSService" />
+        <service android:name="com.amap.api.location.APSService"></service>
 
         <!-- 广播接受者配置选项 -->
         <receiver android:name=".broadcastreceiver.BootCompletedReceiver">

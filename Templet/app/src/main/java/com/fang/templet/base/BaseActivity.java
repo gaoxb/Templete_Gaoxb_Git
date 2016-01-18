@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.fang.templet.R;
@@ -63,6 +64,11 @@ public abstract class BaseActivity extends AppCompatActivity implements ToolBarE
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (!fullScreen()) {
+            setStatusBar();
+        } else {
+            setFullSreen();
+        }
         super.onCreate(savedInstanceState);
         init();
     }
@@ -77,8 +83,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ToolBarE
 
         registerReceiver(mExitAppReceiver, new IntentFilter(
                 Constant.Intent.INTENT_ACTION_EXIT_APP));
-
-        setStatusBar();
         setContentView(getLayoutResource());
         setToolBarEventListner();
 
@@ -93,13 +97,26 @@ public abstract class BaseActivity extends AppCompatActivity implements ToolBarE
         }
     }
 
+    /**
+     * 设置为全屏
+     */
+    private void setFullSreen() {
+        //取消标题
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //取消状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+
     @Override
     public void setContentView(int layoutResID) {
-        mToolBarHelper = new ToolBarHelper(this, layoutResID);
+        if (!fullScreen()) {
+            mToolBarHelper = new ToolBarHelper(this, layoutResID);
+        } else {
+            mToolBarHelper = new ToolBarHelper(this, layoutResID, true);
+        }
         toolbar = mToolBarHelper.getToolBar();
         setContentView(mToolBarHelper.getContentView());
-        //把 toolbar 设置到Activity 中
-//        setSupportActionBar(toolbar);
         //自定义的一些操作
         onCreateCustomToolBar(toolbar);
     }
@@ -123,6 +140,13 @@ public abstract class BaseActivity extends AppCompatActivity implements ToolBarE
      * @return layout资源ID
      */
     protected abstract int getLayoutResource();
+
+    /**
+     * 初始化控件
+     */
+    protected boolean fullScreen() {
+        return false;
+    }
 
     /**
      * 初始化控件

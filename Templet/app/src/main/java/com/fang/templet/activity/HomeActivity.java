@@ -3,6 +3,7 @@ package com.fang.templet.activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 
 import com.fang.templet.R;
 import com.fang.templet.base.BaseActivity;
@@ -11,6 +12,10 @@ import com.fang.templet.base.constant.Constant;
 import com.fang.templet.component.dialog.DialogCallBack;
 import com.fang.templet.component.dialog.DialogManager;
 import com.fang.templet.component.dialog.IDialog;
+import com.fang.templet.view.TagView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 包名：com.fang.templet.activity
@@ -18,7 +23,7 @@ import com.fang.templet.component.dialog.IDialog;
  * 邮箱：13671322615@163.com
  * 主界面
  */
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "HomeActivity";
 
@@ -26,6 +31,11 @@ public class HomeActivity extends BaseActivity {
 
     private ExitDialogCallBack mExitDialogCallBack = new ExitDialogCallBack();
     private Dialog dialog;
+    private TagView mTagView1;
+    private TagView mTagView2;
+    private TagView mTagView3;
+
+    private List<TagView> mTagViews = new ArrayList<TagView>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +49,21 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        setTitle(getResources().getString(R.string.activity_web));
 
+        mTagView1 = (TagView) findViewById(R.id.tagview1);
+        mTagView2 = (TagView) findViewById(R.id.tagview2);
+        mTagView3 = (TagView) findViewById(R.id.tagview3);
+
+        mTagViews.add(mTagView1);
+        mTagViews.add(mTagView2);
+        mTagViews.add(mTagView3);
+
+        mTagView1.setOnClickListener(this);
+        mTagView2.setOnClickListener(this);
+        mTagView3.setOnClickListener(this);
+
+        resetOtherTab();
     }
 
     @Override
@@ -73,6 +97,34 @@ public class HomeActivity extends BaseActivity {
         }
         return super.onCreateDialog(id);
     }
+
+    @Override
+    public void onClick(View v) {
+        resetOtherTab();
+        switch (v.getId()) {
+            case R.id.tagview1:
+                mTagView1.setIconAlpha(1f);
+                break;
+            case R.id.tagview2:
+                mTagView2.setIconAlpha(1f);
+                break;
+            case R.id.tagview3:
+                mTagView3.setIconAlpha(1f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 重置tag的颜色值
+     */
+    private void resetOtherTab() {
+        for (TagView tagView : mTagViews) {
+            tagView.setIconAlpha(0);
+        }
+    }
+
 
     private class ExitDialogCallBack implements DialogCallBack {
 

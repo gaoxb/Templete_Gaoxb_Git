@@ -65,8 +65,18 @@ public class ToolBarHelper implements View.OnClickListener {
     private ToolBarEventListner mToolbarEventListener;
     private int mToolBarHeight;
 
+    /**
+     * 是否设置为全屏
+     */
+    private boolean overly = false;
+
     public ToolBarHelper(Context context, int layoutId) {
+        this(context, layoutId, false);
+    }
+
+    public ToolBarHelper(Context context, int layoutId, boolean isFullSreen) {
         this.mContext = context;
+        this.overly = isFullSreen;
         mInflater = LayoutInflater.from(mContext);
         //初始化整个内容
         initContentView();
@@ -99,7 +109,7 @@ public class ToolBarHelper implements View.OnClickListener {
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         TypedArray typedArray = mContext.getTheme().obtainStyledAttributes(ATTRS);
         //获取主题中定义的悬浮标志
-        boolean overly = typedArray.getBoolean(0, false);
+//        boolean overly = typedArray.getBoolean(0, false);
         //获取主题中定义的toolbar的高度
         int toolBarSize = (int) typedArray.getDimension(1, (int) mContext.getResources().getDimension(R.dimen.toobar_height));
         typedArray.recycle();

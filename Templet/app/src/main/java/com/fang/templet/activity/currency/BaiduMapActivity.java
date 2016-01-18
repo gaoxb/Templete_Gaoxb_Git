@@ -24,6 +24,7 @@ public class BaiduMapActivity extends BaseActivity {
         return 0;
     }
 
+
     @Override
     protected void initView() {
 
