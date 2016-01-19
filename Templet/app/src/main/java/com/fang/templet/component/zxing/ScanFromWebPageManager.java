@@ -17,8 +17,9 @@
 package com.fang.templet.component.zxing;
 
 import android.net.Uri;
-import com.google.zxing.Result;
+
 import com.fang.templet.component.zxing.result.ResultHandler;
+import com.google.zxing.Result;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

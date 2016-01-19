@@ -19,10 +19,11 @@ package com.fang.templet.component.zxing.result.supplement;
 import android.content.Context;
 import android.text.Html;
 import android.widget.TextView;
-import com.fang.templet.component.zxing.HttpHelper;
+
 import com.fang.templet.R;
-import com.fang.templet.component.zxing.history.HistoryManager;
+import com.fang.templet.component.zxing.HttpHelper;
 import com.fang.templet.component.zxing.LocaleManager;
+import com.fang.templet.component.zxing.history.HistoryManager;
 
 import java.io.IOException;
 import java.net.URLEncoder;

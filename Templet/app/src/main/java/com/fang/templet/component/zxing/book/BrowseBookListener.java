@@ -20,8 +20,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.widget.AdapterView;
+
 import com.fang.templet.component.zxing.LocaleManager;
-import com.fang.templet.util.StringUtils;
 
 import java.util.List;
 
@@ -47,7 +47,7 @@ final class BrowseBookListener implements AdapterView.OnItemClickListener {
     }
     String pageId = items.get(itemOffset).getPageId();
     String query = SearchBookContentsResult.getQuery();
-    if (LocaleManager.isBookSearchUrl(activity.getISBN()) && !StringUtils.isNullOrEmpty(pageId)) {
+    if (LocaleManager.isBookSearchUrl(activity.getISBN()) && !pageId.isEmpty()) {
       String uri = activity.getISBN();
       int equals = uri.indexOf('=');
       String volumeId = uri.substring(equals + 1);

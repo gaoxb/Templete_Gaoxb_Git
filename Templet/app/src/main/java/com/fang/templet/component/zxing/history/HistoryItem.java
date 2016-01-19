@@ -16,7 +16,6 @@
 
 package com.fang.templet.component.zxing.history;
 
-import com.fang.templet.util.StringUtils;
 import com.google.zxing.Result;
 
 public final class HistoryItem {
@@ -37,12 +36,12 @@ public final class HistoryItem {
 
   public String getDisplayAndDetails() {
     StringBuilder displayResult = new StringBuilder();
-    if (display == null || StringUtils.isNullOrEmpty(display)) {
+    if (display == null || display.isEmpty()) {
       displayResult.append(result.getText());
     } else {
       displayResult.append(display);
     }
-    if (details != null && !StringUtils.isNullOrEmpty(details)) {
+    if (details != null && !details.isEmpty()) {
       displayResult.append(" : ").append(details);
     }
     return displayResult.toString();

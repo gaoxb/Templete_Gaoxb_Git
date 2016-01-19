@@ -16,8 +16,8 @@
 
 package com.fang.templet.component.zxing.result;
 
-import com.google.zxing.Result;
 import com.fang.templet.R;
+import com.google.zxing.Result;
 import com.google.zxing.client.result.ISBNParsedResult;
 import com.google.zxing.client.result.ParsedResult;
 

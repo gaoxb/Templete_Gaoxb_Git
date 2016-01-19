@@ -16,15 +16,14 @@
 
 package com.fang.templet.component.zxing.encode;
 
-import com.fang.templet.util.StringUtils;
+import com.fang.templet.R;
+import com.fang.templet.component.zxing.Contents;
+import com.fang.templet.component.zxing.Intents;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.Result;
 import com.google.zxing.WriterException;
-import com.fang.templet.component.zxing.Contents;
-import com.fang.templet.component.zxing.Intents;
-import com.fang.templet.R;
 import com.google.zxing.client.result.AddressBookParsedResult;
 import com.google.zxing.client.result.ParsedResult;
 import com.google.zxing.client.result.ResultParser;
@@ -113,14 +112,14 @@ final class QRCodeEncoder {
     }
     if (format == null || format == BarcodeFormat.QR_CODE) {
       String type = intent.getStringExtra(Intents.Encode.TYPE);
-      if (type == null || StringUtils.isNullOrEmpty(type)) {
+      if (type == null || type.isEmpty()) {
         return false;
       }
       this.format = BarcodeFormat.QR_CODE;
       encodeQRCodeContents(intent, type);
     } else {
       String data = intent.getStringExtra(Intents.Encode.DATA);
-      if (data != null && !StringUtils.isNullOrEmpty(data)) {
+      if (data != null && !data.isEmpty()) {
         contents = data;
         displayContents = data;
         title = activity.getString(R.string.contents_text);

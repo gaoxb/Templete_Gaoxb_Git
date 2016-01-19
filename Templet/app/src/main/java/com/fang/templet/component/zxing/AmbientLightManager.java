@@ -23,7 +23,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
-
 import com.fang.templet.component.zxing.camera.CameraManager;
 import com.fang.templet.component.zxing.camera.FrontLightMode;
 

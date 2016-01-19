@@ -34,9 +34,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.fang.templet.R;
 import com.fang.templet.component.zxing.CaptureActivity;
 import com.fang.templet.component.zxing.Intents;
-import com.fang.templet.R;
 
 public final class HistoryActivity extends ListActivity {
 

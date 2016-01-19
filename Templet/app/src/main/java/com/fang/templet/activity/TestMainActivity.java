@@ -18,7 +18,6 @@ import com.fang.templet.activity.currency.CityActivity;
 import com.fang.templet.activity.currency.LoginActivity;
 import com.fang.templet.activity.currency.PhotoActivity;
 import com.fang.templet.activity.currency.RecordVideoActivity;
-import com.fang.templet.activity.currency.ScanActivity;
 import com.fang.templet.activity.currency.SearchActivity;
 import com.fang.templet.activity.currency.SettingsActivity;
 import com.fang.templet.activity.currency.TakePhotoActivity;
@@ -26,6 +25,7 @@ import com.fang.templet.activity.currency.UserFeedback;
 import com.fang.templet.activity.currency.VideoActivity;
 import com.fang.templet.activity.currency.WebActivity;
 import com.fang.templet.base.BaseActivity;
+import com.fang.templet.component.zxing.CaptureActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +71,7 @@ public class TestMainActivity extends BaseActivity implements AdapterView.OnItem
         activities.add(LoginActivity.class);
         activities.add(PhotoActivity.class);
         activities.add(RecordVideoActivity.class);
-        activities.add(ScanActivity.class);
+        activities.add(CaptureActivity.class);
         activities.add(SearchActivity.class);
         activities.add(SettingsActivity.class);
         activities.add(TakePhotoActivity.class);

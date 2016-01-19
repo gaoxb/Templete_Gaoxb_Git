@@ -17,6 +17,7 @@
 package com.fang.templet.component.zxing.camera;
 
 import android.content.SharedPreferences;
+
 import com.fang.templet.component.zxing.PreferencesActivity;
 
 /**

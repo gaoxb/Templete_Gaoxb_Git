@@ -19,9 +19,10 @@ package com.fang.templet.component.zxing.share;
 import android.provider.ContactsContract;
 
 import com.fang.templet.R;
-import com.google.zxing.BarcodeFormat;
 import com.fang.templet.component.zxing.Contents;
 import com.fang.templet.component.zxing.Intents;
+import com.fang.templet.component.zxing.clipboard.ClipboardInterface;
+import com.google.zxing.BarcodeFormat;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -30,11 +31,11 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.provider.Browser;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-import com.fang.templet.component.zxing.clipboard.ClipboardInterface;
 
 /**
  * Barcode Scanner can share data like contacts and bookmarks by displaying a QR Code on screen,
@@ -140,7 +141,7 @@ public final class ShareActivity extends Activity {
       switch (requestCode) {
         case PICK_BOOKMARK:
         case PICK_APP:
-//          showTextAsBarcode(intent.getStringExtra(Browser.BookmarkColumns.URL));
+          showTextAsBarcode(intent.getStringExtra("url"));
           break;
         case PICK_CONTACT:
           // Data field is content://contacts/people/984

@@ -26,6 +26,7 @@ import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
 
+import com.fang.templet.component.zxing.CameraConfigurationUtils;
 import com.fang.templet.component.zxing.PreferencesActivity;
 import com.fang.templet.component.zxing.camera.open.CameraFacing;
 import com.fang.templet.component.zxing.camera.open.OpenCamera;
@@ -118,7 +119,6 @@ final class CameraConfigurationManager {
     Log.i(TAG, "Clockwise rotation from display to camera: " + cwNeededRotation);
 
     Point theScreenResolution = new Point();
-    //TODO
     display.getSize(theScreenResolution);
     screenResolution = theScreenResolution;
     Log.i(TAG, "Screen resolution in current orientation: " + screenResolution);

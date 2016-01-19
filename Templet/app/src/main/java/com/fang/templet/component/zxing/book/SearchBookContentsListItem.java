@@ -16,9 +16,6 @@
 
 package com.fang.templet.component.zxing.book;
 
-import com.fang.templet.R;
-import com.fang.templet.util.StringUtils;
-
 import android.content.Context;
 import android.graphics.Typeface;
 import android.text.Spannable;
@@ -27,6 +24,8 @@ import android.text.style.StyleSpan;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.fang.templet.R;
 
 import java.util.Locale;
 
@@ -57,7 +56,7 @@ public final class SearchBookContentsListItem extends LinearLayout {
   public void set(SearchBookContentsResult result) {
     pageNumberView.setText(result.getPageNumber());
     String snippet = result.getSnippet();
-    if (StringUtils.isNullOrEmpty(snippet)) {
+    if (snippet.isEmpty()) {
       snippetView.setText("");
     } else {
       if (result.getValidSnippet()) {

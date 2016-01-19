@@ -18,6 +18,7 @@ package com.fang.templet.component.zxing.result;
 
 import android.content.ActivityNotFoundException;
 import android.util.Log;
+
 import com.fang.templet.R;
 import com.google.zxing.client.result.CalendarParsedResult;
 import com.google.zxing.client.result.ParsedResult;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fang.templet.component.zxing.camera;
+package com.fang.templet.component.zxing;
 
 import android.annotation.TargetApi;
 import android.graphics.Point;

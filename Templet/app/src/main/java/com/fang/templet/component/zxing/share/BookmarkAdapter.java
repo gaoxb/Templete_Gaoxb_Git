@@ -16,6 +16,7 @@
 
 package com.fang.templet.component.zxing.share;
 
+
 import android.content.Context;
 import android.database.Cursor;
 import android.view.LayoutInflater;
@@ -26,7 +27,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fang.templet.R;
-
 
 /**
  * A custom adapter designed to fetch bookmarks from a cursor. Before Honeycomb we used

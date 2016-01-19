@@ -23,7 +23,6 @@ import android.util.Log;
 
 import java.util.regex.Pattern;
 
-import com.fang.templet.util.StringUtils;
 import com.google.zxing.client.result.WifiParsedResult;
 
 /**
@@ -82,7 +81,7 @@ public final class WifiConfigManager extends AsyncTask<WifiParsedResult,Object,O
       changeNetworkUnEncrypted(wifiManager, theWifiResult);
     } else {
       String password = theWifiResult.getPassword();
-      if (password != null && !StringUtils.isNullOrEmpty(password)) {
+      if (password != null && !password.isEmpty()) {
         if (networkType == NetworkType.WEP) {
           changeNetworkWEP(wifiManager, theWifiResult);
         } else if (networkType == NetworkType.WPA) {

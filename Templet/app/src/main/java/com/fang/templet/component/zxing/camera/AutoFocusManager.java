@@ -23,11 +23,11 @@ import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.fang.templet.component.zxing.PreferencesActivity;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.RejectedExecutionException;
-
-import com.fang.templet.component.zxing.PreferencesActivity;
 
 final class AutoFocusManager implements Camera.AutoFocusCallback {
 
@@ -68,7 +68,6 @@ final class AutoFocusManager implements Camera.AutoFocusCallback {
     if (!stopped && outstandingTask == null) {
       AutoFocusTask newTask = new AutoFocusTask();
       try {
-        //TODO
         newTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         outstandingTask = newTask;
       } catch (RejectedExecutionException ree) {

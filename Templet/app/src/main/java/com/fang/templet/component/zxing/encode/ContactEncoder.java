@@ -16,8 +16,6 @@
 
 package com.fang.templet.component.zxing.encode;
 
-import com.fang.templet.util.StringUtils;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +49,7 @@ abstract class ContactEncoder {
       return null;
     }
     String result = s.trim();
-    return StringUtils.isNullOrEmpty(result) ? null : result;
+    return result.isEmpty() ? null : result;
   }
 
   static void append(StringBuilder newContents,
@@ -83,7 +81,7 @@ abstract class ContactEncoder {
     for (int i = 0; i < values.size(); i++) {
       String value = values.get(i);
       String trimmed = trim(value);
-      if (trimmed != null && !StringUtils.isNullOrEmpty(trimmed) && !uniques.contains(trimmed)) {
+      if (trimmed != null && !trimmed.isEmpty() && !uniques.contains(trimmed)) {
         newContents.append(prefix).append(fieldFormatter.format(trimmed, i)).append(terminator);
         CharSequence display = displayFormatter == null ? trimmed : displayFormatter.format(trimmed, i);
         newDisplayContents.append(display).append('\n');

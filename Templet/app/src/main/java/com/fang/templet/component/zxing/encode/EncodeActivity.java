@@ -20,11 +20,12 @@ import android.graphics.Point;
 import android.view.Display;
 import android.view.MenuInflater;
 import android.view.WindowManager;
-import com.google.zxing.WriterException;
+
+import com.fang.templet.R;
 import com.fang.templet.component.zxing.Contents;
 import com.fang.templet.component.zxing.FinishListener;
 import com.fang.templet.component.zxing.Intents;
-import com.fang.templet.R;
+import com.google.zxing.WriterException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -192,7 +193,6 @@ public final class EncodeActivity extends Activity {
     WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
     Display display = manager.getDefaultDisplay();
     Point displaySize = new Point();
-    //TODO
     display.getSize(displaySize);
     int width = displaySize.x;
     int height = displaySize.y;

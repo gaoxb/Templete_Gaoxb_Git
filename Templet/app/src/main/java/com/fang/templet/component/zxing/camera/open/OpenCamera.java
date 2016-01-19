@@ -19,7 +19,8 @@ package com.fang.templet.component.zxing.camera.open;
 import android.hardware.Camera;
 
 public final class OpenCamera {
-  
+
+
   private final int index;
   private final Camera camera;
   private final CameraFacing facing;

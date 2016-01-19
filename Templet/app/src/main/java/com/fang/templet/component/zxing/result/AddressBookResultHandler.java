@@ -16,16 +16,15 @@
 
 package com.fang.templet.component.zxing.result;
 
+import com.fang.templet.R;
+import com.google.zxing.client.result.AddressBookParsedResult;
+import com.google.zxing.client.result.ParsedResult;
+
 import android.app.Activity;
 import android.telephony.PhoneNumberUtils;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
-
-import com.fang.templet.R;
-import com.fang.templet.util.StringUtils;
-import com.google.zxing.client.result.AddressBookParsedResult;
-import com.google.zxing.client.result.ParsedResult;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -83,7 +82,7 @@ public final class AddressBookResultHandler extends ResultHandler {
     super(activity, result);
     AddressBookParsedResult addressResult = (AddressBookParsedResult) result;
     String[] addresses = addressResult.getAddresses();
-    boolean hasAddress = addresses != null && addresses.length > 0 && addresses[0] != null && !StringUtils.isNullOrEmpty(addresses[0]);
+    boolean hasAddress = addresses != null && addresses.length > 0 && addresses[0] != null && !addresses[0].isEmpty();
     String[] phoneNumbers = addressResult.getPhoneNumbers();
     boolean hasPhoneNumber = phoneNumbers != null && phoneNumbers.length > 0;
     String[] emails = addressResult.getEmails();
@@ -174,7 +173,7 @@ public final class AddressBookResultHandler extends ResultHandler {
     int namesLength = contents.length();
 
     String pronunciation = result.getPronunciation();
-    if (pronunciation != null && !StringUtils.isNullOrEmpty(pronunciation)) {
+    if (pronunciation != null && !pronunciation.isEmpty()) {
       contents.append("\n(");
       contents.append(pronunciation);
       contents.append(')');
@@ -195,7 +194,7 @@ public final class AddressBookResultHandler extends ResultHandler {
     ParsedResult.maybeAppend(result.getURLs(), contents);
 
     String birthday = result.getBirthday();
-    if (birthday != null && !StringUtils.isNullOrEmpty(birthday)) {
+    if (birthday != null && !birthday.isEmpty()) {
       Date date = parseDate(birthday);
       if (date != null) {
         ParsedResult.maybeAppend(DateFormat.getDateInstance(DateFormat.MEDIUM).format(date.getTime()), contents);

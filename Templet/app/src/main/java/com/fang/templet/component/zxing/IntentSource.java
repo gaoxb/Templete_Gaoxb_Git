@@ -18,9 +18,9 @@ package com.fang.templet.component.zxing;
 
 enum IntentSource {
 
-  NATIVE_APP_INTENT,
-  PRODUCT_SEARCH_LINK,
-  ZXING_LINK,
-  NONE
+    NATIVE_APP_INTENT,
+    PRODUCT_SEARCH_LINK,
+    ZXING_LINK,
+    NONE
 
 }

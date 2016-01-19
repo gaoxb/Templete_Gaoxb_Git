@@ -145,6 +145,7 @@
     <string name="activity_test">测试页面</string>
     <string name="activity_home">主页面</string>
     <string name="activity_web">Web页面</string>
+    <string name="activity_sacn">二维码扫描</string>
     <string name="activity_amap">高德地图</string>
     <string name="activity_feedback">用户反馈</string>
     <string name="activity_login">登录</string>

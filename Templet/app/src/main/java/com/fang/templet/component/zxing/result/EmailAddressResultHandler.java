@@ -52,14 +52,14 @@ public final class EmailAddressResultHandler extends ResultHandler {
         EmailAddressParsedResult emailResult = (EmailAddressParsedResult) getResult();
         switch (index) {
             case 0:
-                sendEmail(new String[]{emailResult.getMailtoURI()},
-                        new String[]{emailResult.getMailtoURI()},
-                        new String[]{emailResult.getMailtoURI()},
+                sendEmail(new String[]{emailResult.getEmailAddress()},
+                        new String[]{},
+                        new String[]{},
                         emailResult.getSubject(),
                         emailResult.getBody());
                 break;
             case 1:
-                addEmailOnlyContact(new String[]{emailResult.getMailtoURI()}, null);
+                addEmailOnlyContact(new String[]{emailResult.getEmailAddress()}, null);
                 break;
         }
     }
