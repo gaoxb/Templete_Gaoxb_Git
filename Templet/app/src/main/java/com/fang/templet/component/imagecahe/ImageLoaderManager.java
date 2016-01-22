@@ -37,7 +37,7 @@ public class ImageLoaderManager {
     }
 
     private ImageLoaderManager() {
-
+        init();
     }
 
     public void init() {

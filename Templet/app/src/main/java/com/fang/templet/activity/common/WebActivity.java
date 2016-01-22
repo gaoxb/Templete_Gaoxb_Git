@@ -1,4 +1,4 @@
-package com.fang.templet.activity.currency;
+package com.fang.templet.activity.common;
 
 import android.content.Intent;
 import android.net.Uri;

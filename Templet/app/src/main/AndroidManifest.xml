@@ -35,6 +35,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -58,26 +59,15 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="e577d0582ff5ea270ccc5269ba9e2485" />
-        <!-- 主页面 -->
-        <!--<activity android:name=".activity.HomeActivity">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.intent.action.MAIN" />-->
 
-        <!--<category android:name="android.intent.category.LAUNCHER" />-->
-        <!--</intent-filter>-->
-        <!--</activity>-->
-        <activity android:name=".activity.TestMainActivity">
+        <!-- 主页面-->
+        <activity android:name=".activity.ContainerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- 第一次启动引导页面 -->
-        <activity
-            android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_splash" />
 
         <!-- mod activity配置 -->
         <activity
@@ -117,74 +107,74 @@
 
         <!-- 广告页面 -->
         <activity
-            android:name=".activity.AdvertiseActivity"
+            android:name=".activity.AdActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 关于页面 -->
         <activity
-            android:name=".activity.currency.AboutActivity"
+            android:name=".activity.common.AboutActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 高德地图页面 -->
         <activity
-            android:name=".activity.currency.AMapActivity"
+            android:name=".activity.common.AMapActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 高德地图页面 -->
         <activity
-            android:name=".activity.currency.BaiduMapActivity"
+            android:name=".activity.common.BaiduMapActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 城市页面 -->
         <activity
-            android:name=".activity.currency.CityActivity"
+            android:name=".activity.common.CityActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 登录页面 -->
         <activity
-            android:name=".activity.currency.LoginActivity"
+            android:name=".activity.common.LoginActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 瀑布流相册页面 -->
         <activity
-            android:name=".activity.currency.PhotoActivity"
+            android:name=".activity.common.PhotoActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 小视频录制页面页面 -->
         <activity
-            android:name=".activity.currency.RecordVideoActivity"
+            android:name=".activity.common.RecordVideoActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 二维码扫描页面 -->
 
         <!-- 查找页面 -->
         <activity
-            android:name=".activity.currency.SearchActivity"
+            android:name=".activity.common.SearchFragment"
             android:label="@string/title_activity_splash" />
 
         <!-- 设置页面 -->
         <activity
-            android:name=".activity.currency.SettingsActivity"
+            android:name=".activity.common.SettingsActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- 拍照页面 -->
         <activity
-            android:name=".activity.currency.TakePhotoActivity"
+            android:name=".activity.common.TakePhotoActivity"
             android:label="@string/title_activity_splash" />
 
         <!--用户反馈页面 -->
         <activity
-            android:name=".activity.currency.UserFeedback"
+            android:name=".activity.common.UserFeedback"
             android:label="@string/title_activity_splash" />
 
         <!--视频播放页面 -->
         <activity
-            android:name=".activity.currency.VideoActivity"
+            android:name=".activity.common.VideoActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- WEBY页面 -->
         <activity
-            android:name=".activity.currency.WebActivity"
+            android:name=".activity.common.WebActivity"
             android:label="@string/title_activity_splash" />
 
         <!-- zxing 二维码相关 -->

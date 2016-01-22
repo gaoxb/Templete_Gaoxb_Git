@@ -1,4 +1,4 @@
-package com.fang.templet.activity.currency;
+package com.fang.templet.activity.common;
 
 import android.os.Bundle;
 import android.widget.TextView;

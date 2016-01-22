@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.fang.templet.activity.eventCallBack.ValidationEventListener;
-import com.fang.templet.activity.modelinterface.LoginModelInterface;
+import com.fang.templet.activity.modelimpl.LoginModelInterface;
 import com.fang.templet.base.constant.Constant;
 
 import org.json.JSONObject;

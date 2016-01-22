@@ -206,7 +206,7 @@
 
             <Button
                 style="@style/ResultButton"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
         </LinearLayout>
 

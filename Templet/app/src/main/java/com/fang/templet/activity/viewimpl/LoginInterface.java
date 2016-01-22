@@ -1,4 +1,4 @@
-package com.fang.templet.activity.viewinterface;
+package com.fang.templet.activity.viewimpl;
 
 /**
  * 包名：com.fang.templet.activity.viewinterface

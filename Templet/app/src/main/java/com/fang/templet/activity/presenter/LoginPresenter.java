@@ -3,8 +3,8 @@ package com.fang.templet.activity.presenter;
 import android.content.Context;
 
 import com.fang.templet.activity.eventCallBack.ValidationEventListener;
-import com.fang.templet.activity.modelinterface.LoginModelInterface;
-import com.fang.templet.activity.viewinterface.LoginInterface;
+import com.fang.templet.activity.modelimpl.LoginModelInterface;
+import com.fang.templet.activity.viewimpl.LoginInterface;
 import com.fang.templet.base.MyApplication;
 import com.fang.templet.base.constant.Constant;
 import com.fang.templet.component.sms.SmsManager;

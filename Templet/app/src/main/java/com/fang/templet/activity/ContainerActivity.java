@@ -2,10 +2,18 @@ package com.fang.templet.activity;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 
 import com.fang.templet.R;
+import com.fang.templet.activity.common.ContactFragment;
+import com.fang.templet.activity.common.HomeFragment;
+import com.fang.templet.activity.common.MyFragment;
+import com.fang.templet.activity.common.SearchFragment;
 import com.fang.templet.base.BaseActivity;
 import com.fang.templet.base.MyApplication;
 import com.fang.templet.base.constant.Constant;
@@ -23,19 +31,25 @@ import java.util.List;
  * 邮箱：13671322615@163.com
  * 主界面
  */
-public class HomeActivity extends BaseActivity implements View.OnClickListener {
+public class ContainerActivity extends BaseActivity implements View.OnClickListener {
 
-    private static final String TAG = "HomeActivity";
+    private static final String TAG = "ContainerActivity";
 
     private static final int DIALOG_EXIT = 0;
 
     private ExitDialogCallBack mExitDialogCallBack = new ExitDialogCallBack();
     private Dialog dialog;
+
     private TagView mTagView1;
     private TagView mTagView2;
     private TagView mTagView3;
+    private TagView mTagView4;
 
     private List<TagView> mTagViews = new ArrayList<TagView>();
+    private ViewPager mViewPager;
+    private MyPageAdapter myPageAdapter;
+
+    private List<Fragment> mFragment = new ArrayList<Fragment>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,31 +63,39 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        setTitle(getResources().getString(R.string.activity_web));
+        setTitle(getResources().getString(R.string.activity_home));
 
         mTagView1 = (TagView) findViewById(R.id.tagview1);
         mTagView2 = (TagView) findViewById(R.id.tagview2);
         mTagView3 = (TagView) findViewById(R.id.tagview3);
-
-        mTagViews.add(mTagView1);
-        mTagViews.add(mTagView2);
-        mTagViews.add(mTagView3);
+        mTagView4 = (TagView) findViewById(R.id.tagview4);
 
         mTagView1.setOnClickListener(this);
         mTagView2.setOnClickListener(this);
         mTagView3.setOnClickListener(this);
+        mTagView4.setOnClickListener(this);
 
-        resetOtherTab();
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
     }
 
     @Override
     protected void initData() {
+        mTagViews.add(mTagView1);
+        mTagViews.add(mTagView2);
+        mTagViews.add(mTagView3);
+        mTagViews.add(mTagView4);
+        resetOtherTab();
 
+        mFragment.add(new HomeFragment());
+        mFragment.add(new ContactFragment());
+        mFragment.add(new SearchFragment());
+        mFragment.add(new MyFragment());
+        myPageAdapter = new MyPageAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(myPageAdapter);
     }
 
     @Override
     protected void onNavClickEvent() {
-
     }
 
     @Override
@@ -110,6 +132,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.tagview3:
                 mTagView3.setIconAlpha(1f);
+                break;
+            case R.id.tagview4:
+                mTagView4.setIconAlpha(1f);
                 break;
             default:
                 break;
@@ -149,5 +174,22 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private void exit() {
         mApp.exit();
         finish();
+    }
+
+    private class MyPageAdapter extends FragmentPagerAdapter {
+
+        public MyPageAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragment.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragment.size();
+        }
     }
 }

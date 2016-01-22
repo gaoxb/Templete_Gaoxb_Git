@@ -1,6 +1,12 @@
 package com.fang.templet.base;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.fang.templet.util.StringUtils;
 import com.umeng.analytics.MobclickAgent;
@@ -13,12 +19,34 @@ import com.umeng.analytics.MobclickAgent;
  */
 public class BaseFragment extends Fragment {
 
+    private static final String TAG = "BaseFragment";
+
     private String mPageName;
 
-    public void setmPageName(String mPageName) {
-        if (!StringUtils.isNullOrEmpty(mPageName)) {
-            this.mPageName = mPageName;
-        }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -37,5 +65,23 @@ public class BaseFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
 }

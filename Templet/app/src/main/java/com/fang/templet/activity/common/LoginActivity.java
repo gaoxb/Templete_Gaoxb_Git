@@ -1,4 +1,4 @@
-package com.fang.templet.activity.currency;
+package com.fang.templet.activity.common;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.fang.templet.R;
-import com.fang.templet.activity.HomeActivity;
+import com.fang.templet.activity.ContainerActivity;
 import com.fang.templet.activity.presenter.LoginPresenter;
-import com.fang.templet.activity.viewinterface.LoginInterface;
+import com.fang.templet.activity.viewimpl.LoginInterface;
 import com.fang.templet.base.BaseActivity;
 import com.fang.templet.base.MyApplication;
 import com.fang.templet.base.constant.Constant;
@@ -172,7 +172,7 @@ public class LoginActivity extends BaseActivity implements LoginInterface, TextW
      */
     @Override
     public void LoginSuccess() {
-        startActivityForAnima(new Intent(mContext, HomeActivity.class), this);
+        startActivityForAnima(new Intent(mContext, ContainerActivity.class), this);
         finish();
     }
 

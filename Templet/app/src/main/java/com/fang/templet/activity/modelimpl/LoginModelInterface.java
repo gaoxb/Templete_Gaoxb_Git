@@ -1,4 +1,4 @@
-package com.fang.templet.activity.modelinterface;
+package com.fang.templet.activity.modelimpl;
 
 import android.content.Context;
 

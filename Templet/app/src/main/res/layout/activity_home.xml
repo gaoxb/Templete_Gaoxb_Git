@@ -5,53 +5,70 @@
     android:id="@+id/contentPanel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HomeActivity">
+    tools:context=".activity.ContainerActivity">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"></android.support.v4.view.ViewPager>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/background"
-        android:gravity="bottom"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/background">
 
-        <com.fang.templet.view.TagView
-            android:id="@+id/tagview1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            app:iconSrc="@drawable/ic_menu_download"
-            app:textColor="#ff45c01a"
-            app:textContent="测试"
-            app:textSize="25" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
 
+            <com.fang.templet.view.TagView
+                android:id="@+id/tagview1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:iconSrc="@drawable/tabbar_home"
+                app:textColor="#ff45c01a"
+                app:textContent="首页"
+                app:textSize="25" />
 
-        <com.fang.templet.view.TagView
-            android:id="@+id/tagview2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            app:iconSrc="@drawable/ic_menu_showlistview"
-            app:textColor="#ff45c01a"
-            app:textContent="测试"
-            app:textSize="25" />
+            <com.fang.templet.view.TagView
+                android:id="@+id/tagview2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:iconSrc="@drawable/tabbar_message_center"
+                app:textColor="#ff45c01a"
+                app:textContent="通讯录"
+                app:textSize="25" />
 
-        <com.fang.templet.view.TagView
-            android:id="@+id/tagview3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            app:iconSrc="@drawable/ic_menu_showlistview"
-            app:textColor="#ff45c01a"
-            app:textContent="测试"
-            app:textSize="25" />
-    </LinearLayout>
+            <com.fang.templet.view.TagView
+                android:id="@+id/tagview3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:iconSrc="@drawable/tabbar_discover"
+                app:textColor="#ff45c01a"
+                app:textContent="发现"
+                app:textSize="25" />
+
+            <com.fang.templet.view.TagView
+                android:id="@+id/tagview4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:iconSrc="@drawable/tabbar_profile"
+                app:textColor="#ff45c01a"
+                app:textContent="我"
+                app:textSize="25" />
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

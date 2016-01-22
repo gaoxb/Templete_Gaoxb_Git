@@ -1,8 +1,7 @@
-package com.fang.templet.activity.currency;
+package com.fang.templet.activity.common;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;

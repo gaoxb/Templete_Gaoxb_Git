@@ -34,7 +34,6 @@ import com.google.zxing.Result;
 import com.google.zxing.ResultMetadataType;
 import com.google.zxing.ResultPoint;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -193,7 +192,6 @@ public final class CaptureActivity extends BaseActivity implements SurfaceHolder
         }
 
         resetStatusView();
-
 
         beepManager.updatePrefs();
         ambientLightManager.start(cameraManager);
