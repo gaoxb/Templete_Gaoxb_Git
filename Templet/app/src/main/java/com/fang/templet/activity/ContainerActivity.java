@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
@@ -31,7 +32,7 @@ import java.util.List;
  * 邮箱：13671322615@163.com
  * 主界面
  */
-public class ContainerActivity extends BaseActivity implements View.OnClickListener {
+public class ContainerActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private static final String TAG = "ContainerActivity";
 
@@ -76,6 +77,7 @@ public class ContainerActivity extends BaseActivity implements View.OnClickListe
         mTagView4.setOnClickListener(this);
 
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mViewPager.setOnPageChangeListener(this);
     }
 
     @Override
@@ -85,6 +87,7 @@ public class ContainerActivity extends BaseActivity implements View.OnClickListe
         mTagViews.add(mTagView3);
         mTagViews.add(mTagView4);
         resetOtherTab();
+        mTagView1.setIconAlpha(1f);
 
         mFragment.add(new HomeFragment());
         mFragment.add(new ContactFragment());
@@ -126,15 +129,19 @@ public class ContainerActivity extends BaseActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.tagview1:
                 mTagView1.setIconAlpha(1f);
+                mViewPager.setCurrentItem(0);
                 break;
             case R.id.tagview2:
                 mTagView2.setIconAlpha(1f);
+                mViewPager.setCurrentItem(1);
                 break;
             case R.id.tagview3:
                 mTagView3.setIconAlpha(1f);
+                mViewPager.setCurrentItem(2);
                 break;
             case R.id.tagview4:
                 mTagView4.setIconAlpha(1f);
+                mViewPager.setCurrentItem(3);
                 break;
             default:
                 break;
@@ -148,6 +155,26 @@ public class ContainerActivity extends BaseActivity implements View.OnClickListe
         for (TagView tagView : mTagViews) {
             tagView.setIconAlpha(0);
         }
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        if (positionOffset > 0) {
+            TagView left = mTagViews.get(position);
+            TagView right = mTagViews.get(position + 1);
+            left.setIconAlpha(1 - positionOffset);
+            right.setIconAlpha(positionOffset);
+        }
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        Log.i(TAG, "onPageSelected position:" + position);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        Log.i(TAG, "onPageScrollStateChanged state:" + state);
     }
 
 

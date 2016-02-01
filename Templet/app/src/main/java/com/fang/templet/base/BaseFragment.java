@@ -1,6 +1,8 @@
 package com.fang.templet.base;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fang.templet.base.constant.Constant;
 import com.fang.templet.util.StringUtils;
 import com.umeng.analytics.MobclickAgent;
 
@@ -17,11 +20,17 @@ import com.umeng.analytics.MobclickAgent;
  * 邮箱：13671322615@163.com
  * 基础的Fragment类
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     private static final String TAG = "BaseFragment";
 
-    private String mPageName;
+    protected BaseFragment mContext;
+
+    protected MyApplication mApp;
+
+    protected View mView;
+
+    protected String mPageName;
 
     @Override
     public void onAttach(Context context) {
@@ -33,9 +42,34 @@ public class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * 初始化基础界面
+     */
+    private void init() {
+        mContext = this;
+        mApp = MyApplication.getSelf();
+    }
+
+    /**
+     * 设置layout资源ID
+     *
+     * @return layout资源ID
+     */
+    protected abstract int getLayoutResource();
+
+    /**
+     * 初始化界面
+     */
+    protected abstract void initView(View view);
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (getLayoutResource() != 0) {
+            mView = inflater.inflate(getLayoutResource(), null);
+            initView(mView);
+            return mView;
+        }
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
